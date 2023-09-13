@@ -16,6 +16,7 @@ const handler: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
   event
 ) => {
   const data = await getJokeData();
+  console.log("ORIGINAL CHUCKNORRIS.IO RESPONSE:", data);
   return formatJSONResponse({
     data: {
       joke: data.value,
